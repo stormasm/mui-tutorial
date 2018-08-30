@@ -505,15 +505,7 @@ This document is created using the awesome github repository
 **[spec-md](https://github.com/leebyron/spec-md)**
 
 This document is located inside
-**[this github repository](https://github.com/stormasm/mui-tutorial/blob/master/ghw.md)**.
-
-## Examples of spec-md docs...
-
-The initial motivator for spec-md was
-**[graphql](http://facebook.github.io/graphql/draft/)**
-
-The actual
-**[spec on spec-md](http://leebyron.com/spec-md/)**
+**[this github repository](https://github.com/stormasm/mui-tutorial-src)**.
 
 ## Editing this document and pull requests
 
@@ -538,9 +530,17 @@ of all of the *README.md* files in all of the tutorial demos in a particular ord
 * ghw-part1
 * ghw-part3
 
-For more details on what you need to do in building the tutorial
+For more details on what you need to do to build this tutorial
 [read this document](https://github.com/stormasm/mui-tutorial-src/blob/master/buildnotes.md)
 as well.
+
+## Examples of spec-md docs...
+
+The initial motivator for spec-md was
+**[graphql](http://facebook.github.io/graphql/draft/)**
+
+The actual
+**[spec on spec-md](http://leebyron.com/spec-md/)**
 
 ## Living Document
 
