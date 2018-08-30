@@ -515,6 +515,29 @@ The initial motivator for spec-md was
 The actual
 **[spec on spec-md](http://leebyron.com/spec-md/)**
 
+## Editing this document and pull requests
+
+Please read this section carefully and understand it prior
+to issuing a pull request on the tutorial.
+
+This document has several pieces which all come together to form
+the tutorial.  If you want to understand how the tutorial gets built simply **[read the bash script.](https://github.com/stormasm/mui-tutorial-src/blob/master/scripts/buildme)**
+
+So there are three main pieces to the tutorial and they are:
+
+* [ghw-part1](https://github.com/stormasm/mui-tutorial-src/blob/master/ghw-part1.md)
+* [ghw-part2](https://github.com/stormasm/mui-tutorial-src/blob/master/ghw-part2.md) **which gets built by the script**
+* [ghw-part3](https://github.com/stormasm/mui-tutorial-src/blob/master/ghw-part3.md)
+
+### ghw-part2 in more detail...
+
+The file, **ghw-part2** gets built by the script and is a concatenation
+of all of the *README.md* files in all of the tutorial demos in a particular order that flows and reads like a book or tutorial.  So it is important if you are editing any of these files that you keep that in mind.  **Do Not** edit the files in the repository
+[mui-tutorial](https://github.com/stormasm/mui-tutorial), but rather edit the individual README.md files in the respective demos or
+
+* ghw-part1
+* ghw-part3
+
 ## Living Document
 
 If you are interested in participating in this project feel
