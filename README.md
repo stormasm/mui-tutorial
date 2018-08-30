@@ -538,6 +538,10 @@ of all of the *README.md* files in all of the tutorial demos in a particular ord
 * ghw-part1
 * ghw-part3
 
+For more details on what you need to do in building the tutorial
+[read this document](https://github.com/stormasm/mui-tutorial-src/blob/master/buildnotes.md)
+as well.
+
 ## Living Document
 
 If you are interested in participating in this project feel
