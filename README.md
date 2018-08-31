@@ -11,17 +11,16 @@ I have been working with Material-UI now
 since the release of
 [v1.0.0-beta.3](https://github.com/mui-org/material-ui/releases/tag/v1.0.0-beta.3) on July 29, 2017. Over that time period I have worked on different projects
 that cover a range of topics. From that experience and knowledge, I have come
-up with a tutorial that hits the highlights of ideas people need
+up with a tutorial that hits the highlights of concepts people need
 to know when visualizing JSON data coming from an
 [API endpoint](https://stackoverflow.com/questions/2122604/what-is-an-endpoint).
 
 The demos in the
 [Material-UI documentation](https://material-ui.com/)
 are an excellent starting
-point to better understand how Material-UI works in the context
-of one React component.
-
-But if you want a better understanding of a slightly more complicated
+point to better understand how Material-UI works.
+This tutorial further expands those concepts with
+a slightly more complicated
 real world Material-UI application this will hopefully serve your needs.
 
 ## Create React App
@@ -45,7 +44,7 @@ that would be valuable to have documented.  From there, I started working on
 a more sophisticated application that used
 [Menus](https://material-ui.com/demos/menus/) instead of [Drawers](https://material-ui.com/demos/drawers/) and that added more knowledge to understand and think about. Fast forward about a year, and I am finally getting around
 to writing all of these concepts up along with polishing up some nice
-demos that elucidate the concepts.
+demos that illustrate the concepts.
 
 All of the demos that this tutorial will reference uses
 CRA which means they all come out of the box the same way with the
@@ -56,7 +55,13 @@ npm install
 npm start
 ```
 
-# The List
+# Github Worlds
+
+Github Worlds, from here on shortened to **ghw**, is a set of repositories located inside this tutorial that shows simple visualization techniques using Material-UI
+**[cards](https://material-ui.com/demos/cards/)**.  The idea behind the set of demos is that data is retrieved from the
+**[Github Graphql API](https://developer.github.com/v4/)** and stored in static JSON files which are then retrieved from some cloud server and displayed inside a data visualization of Github API endpoints.  Eventually, (in the future) this data might come live from the Graphql API but for now (in order to reduce complexity of the demo) we decided to use a simpler approach of static JSON files.
+
+## The List
 
 All of the repositories in this tutorial use the
 [MIT License](https://en.wikipedia.org/wiki/MIT_License) and are referenced with the
@@ -65,12 +70,12 @@ All of the repositories in this tutorial use the
 
 They include in order of complexity from the most simple to slightly more sophisticated code:
 
-## Drawers
+### Drawers
 
 * [mui-drawer](https://stormasm.github.io/mui-drawer/)
 * [ghw-drawer](https://muitool.github.io/ghw-drawer/)
 
-## Menus
+### Menus
 
 * [mui-menu](https://stormasm.github.io/mui-menu/)
 * [ghw-menu](https://muitool.github.io/ghw-menu/)
@@ -92,7 +97,7 @@ for its routing.  This demo shows how to use
 [react-router](https://reacttraining.com/react-router/web/api/Link)
 for its routing instead of [Next.js](https://github.com/zeit/next.js#with-link).
 
-There are two standard ways to navigate inside Material-UI; **[drawers](https://material-ui.com/demos/drawers/)** and **[menus](https://material-ui.com/demos/menus/)**.  The software for the **AppDrawer** is located inside Material-UI **[docs](https://github.com/mui-org/material-ui/tree/master/docs#material-ui-docs)** and is not part of a released NPM repo (yet).  Therefore, I have broken out the drawer code into this demo to show how to use it standalone in the context of Create React App instead of Next.js which is how it is currently implemented.  The key minor change or refactor is to use
+There are two principal navigation options in Material Design; **[drawers](https://material-ui.com/demos/drawers/)** and **[menus](https://material-ui.com/demos/menus/)**.  The software for the **AppDrawer** is located inside Material-UI **[docs](https://github.com/mui-org/material-ui/tree/master/docs#material-ui-docs)** and is not part of a released NPM repo (yet).  Therefore, I have broken out the drawer code into this demo to show how to use it standalone in the context of Create React App instead of Next.js which is how it is currently implemented.  The key minor change or refactor is to use
 [React Router](https://github.com/ReactTraining/react-router) instead of Next.js for the routing.
 
 If you look at the Material-UI docs the main piece of Navigational software is the **AppDrawer** which is derived from
@@ -104,23 +109,6 @@ This section will outline the details of how to transform the
 [Material-UI Docs](https://material-ui.com/)
 from Next.js to Create-React-App through a simple code
 example.  
-
-### The AppDrawer Concept
-
-Currently the Material-UI docs
-[AppDrawer](https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/AppDrawer.js)
-are driven by
-[Next-js Routing](https://nextjs.org/docs/#routing)
-by using the Material-UI
-[Link](https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/Link.js) component.
-In order to transform the
-[Drawer](https://material-ui.com/demos/drawers/)
-from Next-js to
-[React-Router](https://reacttraining.com/react-router/core/guides/philosophy)
-one must remove references to the Next-js Link inside the
-[AppDrawerNavItem](https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/AppDrawerNavItem.js)
-and replace it with the React-Router
-[Link](https://reacttraining.com/react-router/web/api/Link).
 
 ### The AppDrawer Details
 
@@ -163,6 +151,15 @@ const ShowChapterSection = ({ match }) => (
 ```
 
 ### More Details
+
+In order to transform the
+[Drawer](https://material-ui.com/demos/drawers/)
+from Next-js to
+[React-Router](https://reacttraining.com/react-router/core/guides/philosophy)
+one must remove references to the Next-js Link inside the
+[AppDrawerNavItem](https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/AppDrawerNavItem.js)
+and replace it with the React-Router
+[Link](https://reacttraining.com/react-router/web/api/Link).
 
 For the details on how to refactor the code from Next.js
 to Create React App [review code.md](https://github.com/stormasm/mui-drawer/blob/master/code.md)
@@ -246,12 +243,6 @@ This demo is an extension of
 [mui-drawer](https://stormasm.github.io/mui-drawer/) and it is assumed that you have already reviewed the concepts and
 documentation associated with that repo.
 
-### Github Worlds
-
-Github Worlds is a set of repositories located inside this tutorial that shows simple visualization techniques using Material-UI
-**[cards](https://material-ui.com/demos/cards/)**.  The idea behind the set of demos is that data is retrieved from the
-**[Github Graphql API](https://developer.github.com/v4/)** and stored in static JSON files which are then retrieved from some cloud server and displayed inside a data visualization of Github API endpoints.  Eventually, (in the future) this data might come live from the Graphql API but for now (in order to reduce complexity of the demo) we decided to use a simpler approach of static JSON files.
-
 ### A Data Visualization Framework
 
 We are in the process of developing a simple generic data visualization
@@ -286,7 +277,7 @@ of the
 Github Worlds (ghw) is a set of views coming from the [Github GraphQL API](https://developer.github.com/v4/).
 Using this data visualization framework one can develop new views of data for repositories, users, statistics and anything else that can be derived from this data possibly in concert with other data sets.
 
-The data sets for *ghw* are abstracted away from the underlying visualization so that the only thing needed to display the data is a JSON data file.  Eventually, we might provide a live view of the data coming from the Github GraphQL API; but for now with simplicity being urgent we decided to only require JSON data sets.  The generation of the JSON data sets is described in another section of the tutorial.  For now, we are providing a test set of JSON data files to better understand the structure of the data along with the program which interprets the data and a sample set of views.
+The data sets for *ghw* are abstracted away from the underlying visualization so that the only thing needed to display the data is a JSON data file.  Eventually, we might provide a live view of the data coming from the Github GraphQL API; but for now the priority is to only require JSON data sets.  The generation of the JSON data sets is described in another section of the tutorial.  For now, we are providing a test set of JSON data files to better understand the structure of the data along with the program which interprets the data and a sample set of views.
 
 Users are welcome to generate out their own custom views along with the data sets to their liking.
 
@@ -439,14 +430,6 @@ The View takes in the prop **tileData** which is the data that was fetched from 
 
 Any custom view that you define will take in tileData as a prop and then its up to you to build out your own styled component View.
 
-### The Material-UI Tutorial
-
-If you have not already read the **[The Material-UI Tutorial](https://stormasm.github.io/mui-tutorial/)**
-you should read it first prior to diving deeply into
-this code base.  It will give you all of the background
-material you need to better understand the concepts
-discussed in this code.
-
 # Appendix
 
 ## Learning React
@@ -455,7 +438,7 @@ If you are coming to React for the first time and are in the learning process of
 
 **Be Patient !**...
 
-Once you get React it makes total sense and is clear and easy to understand; but the road to get there can take some people awhile to grok. If you are fluent in more than one language; and you learned the second language as an adult you know how hard it is to get a concept.  Once you got it, you forget how hard it was to get there.  Computer programming is the same idea.  It takes years to truly be good at writing software; but once you are there it is just second nature.  React is not to this level of complexity... But it does take some people awhile.
+Once you get React it makes total sense and is clear and easy to understand; but the road to get there can take some people a while to grok. If you are fluent in more than one language; and you learned the second language as an adult you know how hard it is to get a concept.  Once you got it, you forget how hard it was to get there.  Computer programming is the same idea.  It takes years to truly be good at writing software; but once you are there it is just second nature.  React is not to this level of complexity... But it does take some people a period of time.
 
 The React model is truly the next evolutionary step in user interface design.  When you think about computer design and how one transistor can be scaled up to have
 **[billions of transistors in one integrated circuit](https://en.wikipedia.org/wiki/Transistor_count)** and then
